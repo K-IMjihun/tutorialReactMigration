@@ -9,7 +9,7 @@ export function useAuthCheck() {
   useEffect(() => {
     axios.get('/api/auth/me').then((response) => {
       if (response.data.authenticated) {
-        dispatch(login(response.data.username));
+        dispatch(login(response.data.email));
       }
     }).catch(() => {
       // 세션 없음
