@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useAuthCheck } from './hooks/useAuthCheck';
 import MainLayout from './layouts/MainLayout';
 import MainPage from './pages/main/MainPage';
 import LoginPage from './pages/login/LoginPage';
@@ -6,6 +7,8 @@ import MembershipPage from './pages/membership/MembershipPage';
 import DetailPage from './pages/detail/DetailPage';
 
 function App() {
+  useAuthCheck();
+
   return (
     <BrowserRouter>
       <Routes>
