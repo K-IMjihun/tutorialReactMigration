@@ -3,6 +3,7 @@ import MainLayout from './layouts/MainLayout';
 import MainPage from './pages/main/MainPage';
 import LoginPage from './pages/login/LoginPage';
 import MembershipPage from './pages/membership/MembershipPage';
+import DetailPage from './pages/detail/DetailPage';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element={<MainPage />} />
+          <Route path="/post/:postId" element={<DetailPage />} />
         </Route>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/membership" element={<MembershipPage />} />
