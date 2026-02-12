@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useAppSelector } from '../../store/hooks';
 import LogoutModal from '../modal/modal';
+import profileImg from '../../assets/img/undraw_profile.svg';
 
 function Header() {
   const { isAuthenticated, username } = useAppSelector((state) => state.auth);
@@ -39,7 +40,7 @@ function Header() {
               </span>
               <img
                 className="img-profile rounded-circle"
-                src="src\assets\img\undraw_profile.svg"
+                src={profileImg}
                 alt="profile"
               />
             </a>
