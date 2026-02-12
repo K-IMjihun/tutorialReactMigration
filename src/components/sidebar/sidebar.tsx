@@ -37,26 +37,33 @@ function Sidebar() {
           <span>Pages</span>
         </a>
         {pagesOpen && (
-          <div className="bg-white py-2 collapse-inner rounded">
-            <h6 className="collapse-header">Login Screens:</h6>
-            {!isAuthenticated ? (
-              <>
-                <Link className="collapse-item" to="/login">Login</Link>
-                <Link className="collapse-item" to="/membership">Membership</Link>
-              </>
-            ) : (
-              <a
-                className="collapse-item"
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById('logoutModal')?.classList.add('show');
-                  document.getElementById('logoutModal')?.setAttribute('style', 'display:block');
-                }}
-              >
-                Logout
-              </a>
-            )}
+          <div
+            id="collapsePages"
+            className="collapse show"
+            aria-labelledby="headingPages"
+            data-parent="#accordionSidebar"
+          >
+            <div className="bg-white py-2 collapse-inner rounded">
+              <h6 className="collapse-header">Login Screens:</h6>
+              {!isAuthenticated ? (
+                <>
+                  <Link className="collapse-item" to="/login">Login</Link>
+                  <Link className="collapse-item" to="/membership">Membership</Link>
+                </>
+              ) : (
+                <a
+                  className="collapse-item"
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('logoutModal')?.classList.add('show');
+                    document.getElementById('logoutModal')?.setAttribute('style', 'display:block');
+                  }}
+                >
+                  Logout
+                </a>
+              )}
+            </div>
           </div>
         )}
       </li>
